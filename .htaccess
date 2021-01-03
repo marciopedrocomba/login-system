@@ -1,0 +1,8 @@
+ErrorDocument 404 "http://ibox.local/notfound"
+ErrorDocument 403 "http://ibox.local"
+Options -IndexeS
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
